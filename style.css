@@ -427,127 +427,128 @@ button:hover::before {
 }
 
 /* Style des items à l'intérieur du conteneur flexbox */
+/* Styles des colonnes flexbox */
 .flex-item1, .flex-item2 {
-  width: 50%; /* Chaque colonne prendra 50% de la largeur du conteneur flex */
+  width: 60%; /* Chaque colonne prendra 50% de la largeur du conteneur flex */
   box-sizing: border-box; /* Pour inclure la bordure dans la largeur/hauteur totale */
   padding: 20px; /* Marge intérieure pour l'espace autour du contenu (optionnel) */
 }
 
-.flex-item1 {
-  background-color: #e8e8e8; /* Couleur de fond pour la colonne 1 */
-}
- /*  formulaire cv */  /*  formulaire cv */ /*  formulaire cv */ /*  formulaire cv */ /*  formulaire cv */ /*  formulaire cv */ /*  formulaire cv */ /*  formulaire cv */ /*  formulaire cv */
- .form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  background-color: #fff;
+/* Styles du formulaire CV *//* Ajoutez vos styles existants ici */
+/* Styles pour les étapes du formulaire */
+/* Styles pour les étapes du formulaire */
+.step {
+  display: none;
   padding: 20px;
-  border-radius: 20px;
-  position: relative;
 }
 
-.title {
-  font-size: 28px;
-  color: royalblue;
-  font-weight: 600;
-  letter-spacing: -1px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-left: 30px;
+.step.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.title::before, .title::after {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  left: 0px;
-  background-color: royalblue;
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
 
-.title::before {
-  width: 18px;
-  height: 18px;
-  background-color: royalblue;
+.step h3 {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 10px;
 }
 
-.title::after {
-  width: 18px;
-  height: 18px;
-  animation: pulse 1s linear infinite;
-}
-
-.flex {
+.step form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-.form label {
-  position: relative;
+.step .flex {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-.form label .input {
-  width: 100%;
+.step label {
+  margin-bottom: 10px;
+  color: #666666;
+}
+
+.step .input {
   padding: 10px;
-  outline: 0;
-  border: 1px solid rgba(105, 105, 105, 0.397);
-  border-radius: 10px;
-}
-
-.form label .input + span {
-  position: absolute;
-  left: 10px;
-  top: 15px;
-  color: grey;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
-}
-
-.form label .input:placeholder-shown + span {
-  top: 15px;
-  font-size: 0.9em;
-}
-
-.form label .input:focus + span, .form label .input:valid + span {
-  top: 30px;
-  font-size: 0.7em;
-  font-weight: 600;
-}
-
-.form label .input:valid + span {
-  color: green;
-}
-
-.submit {
-  border: none;
-  outline: none;
-  background-color: royalblue;
-  padding: 10px;
-  border-radius: 10px;
-  color: #fff;
   font-size: 16px;
-  transition: 0.3s ease;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.step textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.step button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.submit:hover {
-  background-color: rgb(56, 90, 194);
+.step button:hover {
+  background-color: #45a049;
 }
 
-@keyframes pulse {
-  from {
-    transform: scale(0.9);
-    opacity: 1;
-  }
-
-  to {
-    transform: scale(1.8);
-    opacity: 0;
-  }
+.step .prev-btn {
+  background-color: #f44336;
 }
+
+.step .prev-btn:hover {
+  background-color: #e53935;
+}
+
+/* Styles spécifiques pour les conteneurs des éléments multiples */
+.education-item,
+.experience-item,
+.hobbies-item,
+.langues-item {
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.add-btn {
+  margin-top: 10px;
+  background-color: #2196F3;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #0b7dda;
+}
+
+/* Styles pour la colonne 2 */
+.flex-item2 {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.flex-item2 p {
+  color: #666666;
+}
+
+/* Ajoutez vos styles supplémentaires ici selon vos besoins */
