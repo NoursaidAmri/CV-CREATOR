@@ -1,88 +1,114 @@
+/* Reset CSS */
 * {
-  margin: 20px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Utilisation de Montserrat comme police principale */
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
-  background-color: white;
+  background-color: #fff;
   color: #333;
 }
+
+/* Style pour le header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le logo */
+.logo img {
+  max-width: 100px;
+}
+
+/* Style pour la liste de navigation */
 .menu ul {
-  list-style-type: none; /* Suppression des puces de liste */
-  padding: 0;
-  margin: 0;
+  list-style-type: none;
+  display: flex;
 }
 
+/* Style pour les éléments de la liste */
 .menu li {
-  display: inline-block;
-  margin-right: 10px;
-  cursor: pointer; /* Transformer le curseur en pointeur */
-  transition: color 0.3s; /* Animation de transition pour la couleur */
+  margin-right: 20px;
 }
 
-.menu li:hover {
-  color: #384c6c; /* Couleur du texte verte au survol */
-  background-color: #a7d1d9;
-  border: #a7d1d9;
-  
+/* Style pour les liens dans la liste */
+.menu a {
+  text-decoration: none;
+  color: #303030;
+  transition: color 0.3s;
 }
 
-.menu li:active {
-  color: #384c6c; /* Couleur du texte verte lorsque l'élément est cliqué */
+.menu a:hover {
+  color: #384c6c;
 }
 
+/* Style pour la section avec l'image */
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
 
-/* presentation */
-.container {
+.image .item {
+  flex: 1;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style pour les cartes */
+.card-container {
   display: flex;
   flex-wrap: wrap;
-}
-.item {
-  width: 600px;
-  height: 500px;
-}
-.item div {
-  margin-top: 20%;
-  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
-.item2 {
-  width: 300px;
-  height: 500px;
-  margin-left: 15%;
+.card {
+  flex: 1 1 300px;
+  background-color: #f2f8f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style pour un conteneur principal */
+.card-title {
+  color: #262626;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.small-desc {
+  color: #452c2c;
+  font-size: 1em;
+}
+
+/* Style pour la section de call to action */
 .calltoaction {
-  text-align: center; /* Centrage du contenu horizontalement */
+  text-align: center;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100vw; /* Prend toute la largeur de la vue (viewport) */
-  position: relative; /* Position relative pour centrer verticalement */
-  left: 50%; /* Déplace la moitié de la largeur de l'écran vers la droite */
-  transform: translateX(-50%); /* Centre horizontalement */
-}
-
-/* Ajustement pour les petits écrans */
-@media (max-width: 800px) {
-  .calltoaction {
-    width: 100%; /* Sur les petits écrans, la section prend 100% de la largeur disponible */
-    max-width: 100%; /* Assure que la largeur ne dépasse pas la largeur maximale de la vue */
-    margin-left: 0; /* Réinitialise la marge à gauche */
-    transform: none; /* Réinitialise la transformation */
-    left: auto; /* Réinitialise la position à gauche */
-  }
+  margin: 20px 0;
 }
 
 /* Style pour les titres */
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   margin-bottom: 10px;
 }
 
@@ -92,463 +118,158 @@ p {
   color: #666;
 }
 
-/* Style pour les liens */
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-/* Style pour le header */
-header {
-  display: flex;
-  justify-content: space-between; /* Pour aligner les éléments de manière égale sur la ligne */
-  align-items: center; /* Pour centrer verticalement les éléments */
-  padding: 5px 10px; /* Ajout de padding pour un espacement intérieur */
-}
-
-/* Style pour le logo */
-.logo img {
-  max-width: 100px; /* Ajustement de la taille maximale du logo */
-}
-
-/* Style pour la liste de navigation */
-header ul {
-  list-style-type: none; /* Pour enlever les puces de la liste */
-  display: flex;
-  flex-direction: row;
-}
-
-/* Style pour les éléments de la liste */
-header li {
-  margin-right: 20px; /* Espacement entre les éléments de la liste */
-}
-
-/* Style pour les liens dans la liste */
-header a {
-  text-decoration: none;
-  color: #303030; /* Couleur du texte des liens */
-}
-
-/* Style pour les liens au survol */
-header a:hover {
-  text-decoration: underline; /* Soulignement au survol */
-  color: #f0f0f0; /* Exemple de changement de couleur au survol */
-}
-<!-- HTML !-->
-<button class="button-52" role="button">Button 52</button>
-
-/* CSS */
+/* Style pour les boutons */
 .button {
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 20px 13px;
-  outline: 0;
-  border: 1px solid black;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-button {
-  padding: 15px 25px;
-  border: unset;
-  border-radius: 15px;
-  color: #212121;
-  z-index: 1;
-  background: #e8e8e8;
-  position: relative;
-  font-weight: 1000;
-  font-size: 17px;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms;
-  overflow: hidden;
-  cursor: pointer; /* Transformer le curseur en pointeur au survol */
-}
-
-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  border-radius: 15px;
   background-color: #384c6c;
-  z-index: -1;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms;
-}
-
-button:hover {
-  color: #e8e8e8;
-}
-
-button:hover::before {
-  width: 100%;
-}
-
-.calltoaction {
-  text-align: left; /* Centrage du contenu horizontalement */
-  padding: 20px;
-  width: 100%; /* Prend toute la largeur de la page */
-  max-width: 100%; /* Assure que la largeur ne dépasse pas la largeur maximale de la page */
-  margin: 0 auto; /* Centre la section horizontalement */
-}
-
-.RS {
-  margin-bottom: 0px; /* Espacement par rapport au bouton */
-}
-
-.RS ul {
-  list-style-type: none; /* Suppression des puces de la liste */
-  padding: 0px;
-  margin: 0px;
-  margin-bottom: 0px; /* Espacement entre les logos et le bouton */
-}
-
-.RS li {
-  display: inline-block; /* Pour aligner les logos côte à côte */
-  margin: 0 0px; /* Espacement entre les logos */
-}
-
-.RS img {
-  width: 40px; /* Taille des logos */
-  height: 40px;
-}
-
-.image {
-  height: 800%; /* Exemple de hauteur fixe */
-  width: 100%;
-}
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.card {
-  display: block;
-  position: relative;
-  max-width: 300px;
-  max-height: 320px;
-  background-color: #f2f8f9;
-  border-radius: 10px;
-  padding: 2em 1.2em;
-  margin: 12px;
-  text-decoration: none;
-  z-index: 0;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.card-title {
-  color: #262626;
-  font-size: 1.5em;
-  line-height: normal;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-}
-
-.small-desc {
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em;
-  color: #452c2c;
-}
-
-.go-corner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 2em;
-  height: 2em;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  background: linear-gradient(135deg, #6293c8, #384c6c);
-  border-radius: 0 4px 0 32px;
-}
-
-.go-arrow {
-  margin-top: -4px;
-  margin-right: -4px;
   color: white;
-  font-family: courier, sans;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
-.card:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -16px;
-  right: -16px;
-  background: linear-gradient(135deg, #364a60, #384c6c);
-  height: 32px;
-  width: 32px;
-  border-radius: 32px;
-  transform: scale(1);
-  transform-origin: 50% 50%;
-  transition: transform 0.35s ease-out;
-  cursor: pointer;
+.button:hover {
+  background-color: #1e3351;
 }
 
-.card:hover:before {
-  transform: scale(28);
-  cursor: pointer;
-}
-
-.card:hover .small-desc {
-  transition: all 0.5s ease-out;
-  color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-}
-
-.card:hover .card-title {
-  transition: all 0.5s ease-out;
-  color: #ffffff;
-  cursor: pointer;
-}
-/*card call to action/* /*card call to action/* /*card call to action/* /*card call to action/* /*card call to action */
-
+/* Style pour la section avec la carte call to action */
 .card1 {
-  overflow: hidden;
-  position: relative;
-  text-align: left;
-  border-radius: 0.5rem;
-  max-width: max-content;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   background-color: #dbdbdb;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .header1 {
-  padding: 1.25rem 1rem 1rem 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .image1 {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #e2feee;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 9999px;
-  animation: animate 0.6s linear alternate-reverse infinite;
-  transition: 0.6s ease;
-}
-
-.image1 svg {
-  color: #0afa2a;
-  width: 2rem;
-  height: 2rem;
-}
-
-.content1 {
-  margin-top: 0.75rem;
-  text-align: center;
+  flex: 0 0 50px;
+  margin-right: 20px;
 }
 
 .title1 {
-  color: #066e29;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5rem;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #262626;
 }
 
 .message1 {
-  margin-top: 0.5rem;
-  color: #595b5f;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  margin-bottom: 10px;
+  color: #666;
 }
-
-.actions {
-  margin: 0.75rem 1rem;
-}
-
-.history {
-  display: inline-flex;
-  padding: 0.5rem 1rem;
-  background-color: #1aa06d;
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 500;
+.flex-item1 {
+  display: flex;
   justify-content: center;
-  width: 100%;
-  border-radius: 0.375rem;
-  border: none;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  align-items: center;
+  height: 100vh;
 }
 
-.track {
-  display: inline-flex;
-  margin-top: 0.75rem;
-  padding: 0.5rem 1rem;
-  color: #242525;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 500;
-  justify-content: center;
-  width: 100%;
-  border-radius: 0.375rem;
-  border: 1px solid #D1D5DB;
-  background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+.form {
+  background: #fff;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes animate {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.09);
-  }
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
 }
 
-/*page 02crrer un cv*/
-.cvcrrer {
-  display: flex; /* Utilisation du flexbox */
-  justify-content: center;
-  width: 100%; /* Prend toute la largeur disponible du site */
-  height: 700px; /* Hauteur fixe de 700px */
+.title span {
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: #333;
+  bottom: -10px;
+  left: calc(50% - 30px);
 }
 
-/* Style des items à l'intérieur du conteneur flexbox */
-/* Styles des colonnes flexbox */
-.flex-item1, .flex-item2 {
-  width: 60%; /* Chaque colonne prendra 50% de la largeur du conteneur flex */
-  box-sizing: border-box; /* Pour inclure la bordure dans la largeur/hauteur totale */
-  padding: 20px; /* Marge intérieure pour l'espace autour du contenu (optionnel) */
-}
-
-/* Styles du formulaire CV *//* Ajoutez vos styles existants ici */
-/* Styles pour les étapes du formulaire */
-/* Styles pour les étapes du formulaire */
 .step {
   display: none;
-  padding: 20px;
 }
 
 .step.active {
   display: block;
-  animation: fadeIn 0.3s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-10px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-.step h3 {
+h3 {
   font-size: 20px;
-  color: #333333;
   margin-bottom: 10px;
 }
 
-.step form {
+.flex {
   display: flex;
-  flex-direction: column;
-}
-
-.step .flex {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.step label {
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
-  color: #666666;
 }
 
-.step .input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #cccccc;
+.input-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.step textarea {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  resize: vertical;
+.buttons {
+  margin-top: 20px;
+  text-align: right;
 }
 
-.step button {
+.buttons button {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4CAF50;
-  color: white;
   border: none;
   border-radius: 4px;
+  background-color: #333;
+  color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s;
+  margin-left: 10px;
 }
 
-.step button:hover {
+.buttons button:hover {
+  background-color: #555;
+}
+
+.buttons .submit-btn {
+  background-color: #4caf50;
+}
+
+.buttons .submit-btn:hover {
   background-color: #45a049;
 }
 
-.step .prev-btn {
-  background-color: #f44336;
-}
-
-.step .prev-btn:hover {
-  background-color: #e53935;
-}
-
-/* Styles spécifiques pour les conteneurs des éléments multiples */
-.education-item,
-.experience-item,
-.hobbies-item,
-.langues-item {
-  margin-bottom: 20px;
-  border: 1px solid #cccccc;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.add-btn {
-  margin-top: 10px;
-  background-color: #2196F3;
-  color: white;
-}
-
-.add-btn:hover {
-  background-color: #0b7dda;
-}
-
-/* Styles pour la colonne 2 */
-.flex-item2 {
-  background-color: #ffffff;
-  padding: 20px;
-  margin-top: 20px;
+.footer {
+  background-color: #333;
+  color: #fff;
   text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
-
-.flex-item2 p {
-  color: #666666;
-}
-
-/* Ajoutez vos styles supplémentaires ici selon vos besoins */
