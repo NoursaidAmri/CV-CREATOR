@@ -92,9 +92,13 @@
                                     <input type="checkbox" id="en_cours" name="en_cours[]">
                                 </div>
                             </div>
+                            <div class="input-group full-width">
+                                <label for="description_education">Missions et taches :</label>
+                                <textarea id="description_education" name="description_education[]" class="input" required></textarea>
+                            </div>
                         </div>
                     </div>
-                    <button type="button" class="add-btn" onclick="addEducation()">Ajouter un diplôme</button>
+                    <button type="button" class="add-btn" onclick="addEducation()">Ajouter une éducation</button>
                     <div class="buttons">
                         <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
                         <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
@@ -125,10 +129,14 @@
                                     <label for="date_fin">Date de fin :</label>
                                     <input type="date" id="date_fin" name="date_fin[]" class="input">
                                 </div>
-                                <div class="input-group full-width">
-                                    <label for="description">Description des tâches et missions :</label>
-                                    <textarea id="description" name="description[]" class="input" required></textarea>
-                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="en_cours">En cours :</label>
+                                <input type="checkbox" id="en_cours" name="en_cours[]">
+                            </div>
+                            <div class="input-group full-width">
+                                <label for="description">Description des tâches et missions :</label>
+                                <textarea id="description" name="description[]" class="input" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -139,6 +147,7 @@
                     </div>
                 </form>
             </div>
+            
     
             <!-- Étape 4: Hobbies -->
             <div class="step" id="step4">

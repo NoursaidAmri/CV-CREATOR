@@ -240,6 +240,11 @@ h3 {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.input-group.full-width {
+  width: 100%;
+  margin-top: 10px; /* Espacement optionnel en haut du bloc */
+  margin-bottom: 10px; /* Espacement en bas du bloc */
+}
 
 .buttons {
   margin-top: 20px;
@@ -277,3 +282,4 @@ h3 {
   bottom: 0;
   width: 100%;
 }
+
