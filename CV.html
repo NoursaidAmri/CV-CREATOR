@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer votre CV</title>
     <link rel="stylesheet" href="style.css">
-    <script src="javascript.js" defer></script> <!-- Ajout de 'defer' pour charger le script après le parsing du HTML -->
+    <script src="javascript.js" defer></script>
+    <!-- Ajout de 'defer' pour charger le script après le parsing du HTML -->
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                 Formulaire CV
                 <span></span>
             </div>
-
+    
             <!-- Étape 1: Informations Personnelles -->
             <div class="step active" id="step1">
                 <h3>Informations Personnelles</h3>
@@ -40,17 +41,17 @@
                             <label for="nom_prenom">Nom et Prénom :</label>
                             <input type="text" id="nom_prenom" name="nom_prenom" class="input" required>
                         </div>
-
+    
                         <div class="input-group">
                             <label for="adresse">Adresse :</label>
                             <input type="text" id="adresse" name="adresse" class="input" required>
                         </div>
-
+    
                         <div class="input-group">
                             <label for="email">Adresse mail :</label>
                             <input type="email" id="email" name="email" class="input" required>
                         </div>
-
+    
                         <div class="input-group">
                             <label for="permis">Permis de conduire :</label>
                             <select id="permis" name="permis" class="input" required>
@@ -60,13 +61,13 @@
                             </select>
                         </div>
                     </div>
-
+    
                     <div class="buttons">
                         <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
                 </form>
             </div>
-
+    
             <!-- Étape 2: Éducation -->
             <div class="step" id="step2">
                 <h3>Éducation</h3>
@@ -100,7 +101,7 @@
                     </div>
                 </form>
             </div>
-
+    
             <!-- Étape 3: Expérience -->
             <div class="step" id="step3">
                 <h3>Expérience</h3>
@@ -124,10 +125,9 @@
                                     <label for="date_fin">Date de fin :</label>
                                     <input type="date" id="date_fin" name="date_fin[]" class="input">
                                 </div>
-                                <div class="input-group">
+                                <div class="input-group full-width">
                                     <label for="description">Description des tâches et missions :</label>
-                                    <textarea id="description" name="description[]" class="input"
-                                        required></textarea>
+                                    <textarea id="description" name="description[]" class="input" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                     </div>
                 </form>
             </div>
-
+    
             <!-- Étape 4: Hobbies -->
             <div class="step" id="step4">
                 <h3>Hobbies</h3>
@@ -161,7 +161,7 @@
                     </div>
                 </form>
             </div>
-
+    
             <!-- Étape 5: Langues maîtrisées -->
             <div class="step" id="step5">
                 <h3>Langues maîtrisées</h3>
@@ -189,11 +189,11 @@
                     <button type="button" class="add-btn" onclick="addLangue()">Ajouter une langue</button>
                     <div class="buttons">
                         <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
-                        <!-- Pas de bouton Suivant pour la dernière étape -->
+                        <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
                 </form>
             </div>
-
+    
             <!-- Étape 6: Technologies et logiciels maîtrisés -->
             <div class="step" id="step6">
                 <h3>Technologies et logiciels maîtrisés</h3>
@@ -225,10 +225,10 @@
                     </div>
                 </form>
             </div>
-
+    
         </div>
     </section>
-
+    
     <footer class="footer">
         <p>&copy; 2024 Mon CV en ligne. Tous droits réservés.</p>
     </footer>
