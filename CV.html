@@ -17,7 +17,7 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="Acceuil.html">Accueil</a></li>
+                <li><a href="Accueil.html">Accueil</a></li>
                 <li><a href="CV.html">Créer un CV</a></li>
                 <li><a href="articles.html">Nos Articles</a></li>
                 <li><a href="compte.html">Compte</a></li>
@@ -41,17 +41,14 @@
                             <label for="nom_prenom">Nom et Prénom :</label>
                             <input type="text" id="nom_prenom" name="nom_prenom" class="input" required>
                         </div>
-
                         <div class="input-group">
                             <label for="adresse">Adresse :</label>
                             <input type="text" id="adresse" name="adresse" class="input" required>
                         </div>
-
                         <div class="input-group">
                             <label for="email">Adresse mail :</label>
                             <input type="email" id="email" name="email" class="input" required>
                         </div>
-
                         <div class="input-group">
                             <label for="permis">Permis de conduire :</label>
                             <select id="permis" name="permis" class="input" required>
@@ -61,7 +58,6 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="buttons">
                         <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
@@ -77,24 +73,24 @@
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="diplome">Diplôme obtenu :</label>
-                                    <input type="text" name="diplome[]" class="input" required>
+                                    <input type="text" name="diplome" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="annee">Année d'obtention :</label>
-                                    <input type="text" name="annee[]" class="input" required>
+                                    <input type="text" name="annee" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="ecole">École ou Université :</label>
-                                    <input type="text" name="ecole[]" class="input" required>
+                                    <input type="text" name="ecole" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="en_cours">En cours :</label>
-                                    <input type="checkbox" name="en_cours[]">
+                                    <input type="checkbox" name="en_cours">
                                 </div>
                             </div>
                             <div class="input-group full-width">
                                 <label for="description_education">Missions et tâches :</label>
-                                <textarea name="description_education[]" class="input" required></textarea>
+                                <textarea name="description_education" class="input" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -116,28 +112,28 @@
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="poste">Poste occupé :</label>
-                                    <input type="text" name="poste[]" class="input" required>
+                                    <input type="text" name="poste" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="entreprise">Entreprise :</label>
-                                    <input type="text" name="entreprise[]" class="input" required>
+                                    <input type="text" name="entreprise" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="date_debut">Date de début :</label>
-                                    <input type="date" name="date_debut[]" class="input" required>
+                                    <input type="date" name="date_debut" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="date_fin">Date de fin :</label>
-                                    <input type="date" name="date_fin[]" class="input">
+                                    <input type="date" name="date_fin" class="input">
                                 </div>
                             </div>
                             <div class="input-group">
                                 <label for="en_cours">En cours :</label>
-                                <input type="checkbox" name="en_cours[]">
+                                <input type="checkbox" name="en_cours">
                             </div>
                             <div class="input-group full-width">
                                 <label for="description">Description des tâches et missions :</label>
-                                <textarea name="description[]" class="input" required></textarea>
+                                <textarea name="description" class="input" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -159,7 +155,7 @@
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="hobby">Hobby :</label>
-                                    <input type="text" name="hobby[]" class="input" required>
+                                    <input type="text" name="hobby" class="input" required>
                                 </div>
                             </div>
                         </div>
@@ -181,11 +177,11 @@
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="langue">Langue :</label>
-                                    <input type="text" name="langue[]" class="input" required>
+                                    <input type="text" name="langue" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="niveau">Niveau :</label>
-                                    <select name="niveau[]" class="input" required>
+                                    <select name="niveau" class="input" required>
                                         <option value="">Choisir...</option>
                                         <option value="débutant">Débutant</option>
                                         <option value="intermédiaire">Intermédiaire</option>
@@ -212,12 +208,12 @@
                         <div class="technologies-item">
                             <div class="flex">
                                 <div class="input-group">
-                                    <label for="technologie">Technologie ou logiciel :</label>
-                                    <input type="text" name="technologie[]" class="input" required>
+                                    <label for="technologie">Technologie :</label>
+                                    <input type="text" name="technologie" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="niveau">Niveau :</label>
-                                    <select name="niveau[]" class="input" required>
+                                    <select name="niveau" class="input" required>
                                         <option value="">Choisir...</option>
                                         <option value="débutant">Débutant</option>
                                         <option value="intermédiaire">Intermédiaire</option>
@@ -236,44 +232,44 @@
                     </div>
                 </form>
             </div>
-
-            <!-- Étape 7: Compétences professionnelles -->
+            <!-- Ajout du formulaire de sélection du modèle -->
+            <!-- Structure HTML modifiée pour le formulaire de sélection de modèle -->
             <div class="step" id="step7">
-                <h3>Compétences professionnelles</h3>
-                <form id="skills-form">
-                    <div class="skills-container">
-                        <div class="skills-item">
-                            <div class="flex">
-                                <div class="input-group">
-                                    <label for="competence">Compétence :</label>
-                                    <input type="text" name="competence[]" class="input" required>
-                                </div>
-                            </div>
+                <section class="model-selection">
+                    <h2>Sélectionnez un modèle de CV :</h2>
+                    <form id="cv-model-form">
+                        <select name="cv_model" id="cv_model">
+                            <option value="modelcv1.html">Modèle Débutant</option>
+                            <option value="modelcv2.html">Modèle Intermédiaire</option>
+                            <option value="modelcv3.html">Modèle Professionnel</option>
+                        </select>
+                        <br>
+                        <br>
+                        <br>
+                        <!-- Boutons Précédent et Suivant doivent être ici -->
+                        <div class="buttons">
+                            <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
+                            <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                         </div>
-                    </div>
-                    <button type="button" class="add-btn skills" onclick="addSkill()">Ajouter une compétence</button>
-                    <div class="buttons">
-                        <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
-                        <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
-                    </div>
-                </form>
+                    </form>
+                </section>
             </div>
-
-            <!-- Étape 8: Validation -->
+                        <!-- Étape 8: Finalisation -->
             <div class="step" id="step8">
-                <h3>Validation</h3>
-                <form id="validation-form">
-                    <div class="validation-message">
-                        <p>Merci de vérifier toutes les informations avant de générer le CV.</p>
-                    </div>
-                    <div class="buttons">
-                        <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
-                        <button type="button" class="generate-btn" onclick="generatePDF()">Générer le CV</button>
-                    </div>
-                </form>
+                <h3>Finalisation</h3>
+                <p>Merci d'avoir rempli les informations. Vous pouvez générer votre CV en cliquant sur le bouton
+                    ci-dessous.</p>
+                <div class="buttons">
+                    <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
+                    <button type="button" id="generate-pdf">Générer le CV</button>
+                </div>
             </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 - Votre entreprise</p>
+    </footer>
 </body>
 
 </html>

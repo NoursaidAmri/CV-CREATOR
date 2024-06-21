@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Original</title>
+    <style>
+        /* Reset des styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Styles généraux */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .cv-container {
+            width: 21cm;
+            max-width: 90%;
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .cv-header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+        }
+        .cv-header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .cv-header p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .cv-section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .section-title:before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: #4CAF50;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+        }
+        .section-content {
+            margin-left: 30px;
+            padding-left: 10px;
+            border-left: 2px dashed #4CAF50;
+        }
+        .info-item {
+            margin-bottom: 10px;
+        }
+        .info-item label {
+            font-weight: bold;
+            width: 150px;
+            display: inline-block;
+        }
+        .info-item p {
+            margin: 0;
+            display: inline-block;
+        }
+        .item-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .item-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .item-list li:before {
+            content: "•";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .skill {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .hobbies-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .hobby {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="cv-header">
+            <h1>Nom Prénom</h1>
+            <p>Développeur Web Full Stack</p>
+        </div>
+        
+        <!-- Informations Personnelles -->
+        <div class="cv-section">
+            <div class="section-title">Informations Personnelles</div>
+            <div class="section-content">
+                <div class="info-item">
+                    <label>Nom :</label>
+                    <p>Nom Prénom</p>
+                </div>
+                <div class="info-item">
+                    <label>Adresse :</label>
+                    <p>123 Rue Principale, Ville</p>
+                </div>
+                <div class="info-item">
+                    <label>Email :</label>
+                    <p>nom@example.com</p>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Éducation -->
+        <div class="cv-section">
+            <div class="section-title">Éducation</div>
+            <div class="section-content">
+                <ul class="item-list">
+                    <li>
+                        <strong>Master en Informatique</strong><br>
+                        Université de Technologie, Année d'obtention : 2022<br>
+                        Description détaillée de l'éducation et des réalisations académiques.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Expérience Professionnelle -->
+        <div class="cv-section">
+            <div class="section-title">Expérience Professionnelle</div>
+            <div class="section-content">
+                <ul class="item-list">
+                    <li>
+                        <strong>Développeur Web</strong><br>
+                        Entreprise Innovante, Janvier 2020 - Présent<br>
+                        Description détaillée des responsabilités et des réalisations dans le poste.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Langues Maîtrisées -->
+        <div class="cv-section">
+            <div class="section-title">Langues Maîtrisées</div>
+            <div class="section-content">
+                <ul class="item-list">
+                    <li>Anglais - Avancé</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Hobbies -->
+        <div class="cv-section">
+            <div class="section-title">Hobbies</div>
+            <div class="section-content">
+                <div class="hobbies-list">
+                    <span class="hobby">Lecture</span>
+                    <span class="hobby">Voyages</span>
+                    <span class="hobby">Sports</span>
+                    <span class="hobby">Photographie</span>
+                    <span class="hobby">Cuisine</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Compétences Professionnelles -->
+        <div class="cv-section">
+            <div class="section-title">Compétences Professionnelles</div>
+            <div class="section-content">
+                <div class="skills-list">
+                    <span class="skill">Développement Web</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">React</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">HTML/CSS</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
