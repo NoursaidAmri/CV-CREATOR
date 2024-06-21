@@ -163,10 +163,29 @@ function generatePDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
+    // Définir les marges et la taille de la police
+    const margin = 10;
+    const fontSize = 12;
+
+    // Fonction pour ajouter du texte avec gestion automatique du saut de ligne si nécessaire
+    const addText = (text, x, y) => {
+        doc.setFontSize(fontSize);
+        const splitText = doc.splitTextToSize(text, doc.internal.pageSize.width - 2 * margin);
+        doc.text(margin + x, margin + y, splitText);
+    };
+
+    // Fonction pour ajouter un titre de section
+    const addSectionTitle = (title, y) => {
+        doc.setFontSize(fontSize + 2);
+        doc.setFont('helvetica', 'bold'); // Utilisation de setFont pour définir la police et le style
+        addText(title, 0, y);
+        doc.setFont('helvetica', 'normal'); // Réinitialisation à la police normale après le titre de section
+    };
+
     // Récupérer les informations personnelles
     const nomElement = document.querySelector('#nom_prenom');
-    const emailElement = document.querySelector('#email');
     const adresseElement = document.querySelector('#adresse');
+    const emailElement = document.querySelector('#email');
     const permisElement = document.querySelector('#permis');
 
     // Vérifier que tous les champs sont remplis
@@ -179,90 +198,112 @@ function generatePDF() {
         };
 
         // Ajouter les informations personnelles au PDF
-        doc.text(`Nom et Prénom: ${personalInfo.nom}`, 10, 10);
-        doc.text(`Email: ${personalInfo.email}`, 10, 20);
-        doc.text(`Adresse: ${personalInfo.adresse}`, 10, 30);
-        doc.text(`Permis de conduire: ${personalInfo.permis}`, 10, 40);
+        addSectionTitle('Informations Personnelles', 10);
+        addText(`Nom et Prénom: ${personalInfo.nom}`, 10, 20);
+        addText(`Email: ${personalInfo.email}`, 10, 30);
+        addText(`Adresse: ${personalInfo.adresse}`, 10, 40);
+        addText(`Permis de conduire: ${personalInfo.permis}`, 10, 50);
     }
 
-    // Récupérer et ajouter les informations d'éducation
+    let yOffset = 70; // Décalage vertical initial
+
+    // Ajouter les informations d'éducation
     const educationItems = document.querySelectorAll('.education-item');
-    let yOffset = 50;
-    educationItems.forEach((item, index) => {
-        const diplome = item.querySelector('input[name="diplome[]"]').value;
-        const annee = item.querySelector('input[name="annee[]"]').value;
-        const ecole = item.querySelector('input[name="ecole[]"]').value;
-        const description = item.querySelector('textarea[name="description_education[]"]').value;
+    if (educationItems.length > 0) {
+        addSectionTitle('Éducation', yOffset);
+        yOffset += 10;
 
-        doc.text(`Éducation ${index + 1}:`, 10, yOffset);
-        doc.text(`Diplôme: ${diplome}`, 10, yOffset + 10);
-        doc.text(`Année: ${annee}`, 10, yOffset + 20);
-        doc.text(`École: ${ecole}`, 10, yOffset + 30);
-        doc.text(`Description: ${description}`, 10, yOffset + 40);
-        yOffset += 50;
-    });
+        educationItems.forEach((item, index) => {
+            const diplome = item.querySelector('input[name="diplome[]"]').value;
+            const annee = item.querySelector('input[name="annee[]"]').value;
+            const ecole = item.querySelector('input[name="ecole[]"]').value;
+            const description = item.querySelector('textarea[name="description_education[]"]').value;
 
-    // Récupérer et ajouter les informations d'expérience
+            addText(`Éducation ${index + 1}:`, 10, yOffset);
+            addText(`Année: ${annee}`, 20, yOffset + 20);
+            addText(`Diplôme: ${diplome}`, 20, yOffset + 10);
+            addText(`École: ${ecole}`, 20, yOffset + 30);
+            addText(`Description: ${description}`, 20, yOffset + 40);
+            yOffset += 50;
+        });
+    }
+
+    // Ajouter les informations d'expérience
     const experienceItems = document.querySelectorAll('.experience-item');
-    experienceItems.forEach((item, index) => {
-        const poste = item.querySelector('input[name="poste[]"]').value;
-        const entreprise = item.querySelector('input[name="entreprise[]"]').value;
-        const dateDebut = item.querySelector('input[name="date_debut[]"]').value;
-        const dateFin = item.querySelector('input[name="date_fin[]"]').value || 'En cours';
-        const description = item.querySelector('textarea[name="description[]"]').value;
+    if (experienceItems.length > 0) {
+        addSectionTitle('Expérience Professionnelle', yOffset);
+        yOffset += 10;
 
-        doc.text(`Expérience ${index + 1}:`, 10, yOffset);
-        doc.text(`Poste: ${poste}`, 10, yOffset + 10);
-        doc.text(`Entreprise: ${entreprise}`, 10, yOffset + 20);
-        doc.text(`Date de début: ${dateDebut}`, 10, yOffset + 30);
-        doc.text(`Date de fin: ${dateFin}`, 10, yOffset + 40);
-        doc.text(`Description: ${description}`, 10, yOffset + 50);
-        yOffset += 60;
-    });
+        experienceItems.forEach((item, index) => {
+            const poste = item.querySelector('input[name="poste[]"]').value;
+            const dateDebut = item.querySelector('input[name="date_debut[]"]').value;
+            const dateFin = item.querySelector('input[name="date_fin[]"]').value || 'En cours';
+            const entreprise = item.querySelector('input[name="entreprise[]"]').value;
+            const description = item.querySelector('textarea[name="description[]"]').value;
 
-    // Récupérer et ajouter les informations de loisirs
+            addText(`Expérience ${index + 1}:`, 10, yOffset);
+            addText(`Poste: ${poste}`, 20, yOffset + 10);
+            addText(`Date de début: ${dateDebut}`, 20, yOffset + 30);
+            addText(`Date de fin: ${dateFin}`, 20, yOffset + 40);
+            addText(`Entreprise: ${entreprise}`, 20, yOffset + 20);
+            addText(`Description: ${description}`, 20, yOffset + 50);
+            yOffset += 60;
+        });
+    }
+
+    // Ajouter les informations de loisirs
     const hobbiesItems = document.querySelectorAll('.hobbies-item');
-    hobbiesItems.forEach((item, index) => {
-        const hobby = item.querySelector('input[name="hobby[]"]').value;
+    if (hobbiesItems.length > 0) {
+        addSectionTitle('Loisirs', yOffset);
+        yOffset += 10;
 
-        doc.text(`Loisir ${index + 1}:`, 10, yOffset);
-        doc.text(`Loisir: ${hobby}`, 10, yOffset + 10);
-        yOffset += 20;
-    });
+        hobbiesItems.forEach((item, index) => {
+            const hobby = item.querySelector('input[name="hobby[]"]').value;
+            addText(`Loisir ${index + 1}: ${hobby}`, 20, yOffset);
+            yOffset += 20;
+        });
+    }
 
-    // Récupérer et ajouter les informations de langues
+    // Ajouter les informations de langues
     const languagesItems = document.querySelectorAll('.languages-item');
-    languagesItems.forEach((item, index) => {
-        const langue = item.querySelector('input[name="langue[]"]').value;
-        const niveau = item.querySelector('select[name="niveau[]"]').value;
+    if (languagesItems.length > 0) {
+        addSectionTitle('Langues', yOffset);
+        yOffset += 10;
 
-        doc.text(`Langue ${index + 1}:`, 10, yOffset);
-        doc.text(`Langue: ${langue}`, 10, yOffset + 10);
-        doc.text(`Niveau: ${niveau}`, 10, yOffset + 20);
-        yOffset += 30;
-    });
+        languagesItems.forEach((item, index) => {
+            const langue = item.querySelector('input[name="langue[]"]').value;
+            const niveau = item.querySelector('select[name="niveau[]"]').value;
+            addText(`Langue ${index + 1}: ${langue} - Niveau: ${niveau}`, 20, yOffset);
+            yOffset += 30;
+        });
+    }
 
-    // Récupérer et ajouter les informations de technologies
+    // Ajouter les informations de technologies
     const technologiesItems = document.querySelectorAll('.technologies-item');
-    technologiesItems.forEach((item, index) => {
-        const technologie = item.querySelector('input[name="technologie[]"]').value;
-        const niveau = item.querySelector('select[name="niveau[]"]').value;
+    if (technologiesItems.length > 0) {
+        addSectionTitle('Technologies', yOffset);
+        yOffset += 10;
 
-        doc.text(`Technologie ${index + 1}:`, 10, yOffset);
-        doc.text(`Technologie: ${technologie}`, 10, yOffset + 10);
-        doc.text(`Niveau: ${niveau}`, 10, yOffset + 20);
-        yOffset += 30;
-    });
+        technologiesItems.forEach((item, index) => {
+            const technologie = item.querySelector('input[name="technologie[]"]').value;
+            const niveau = item.querySelector('select[name="niveau[]"]').value;
+            addText(`Technologie ${index + 1}: ${technologie} - Niveau: ${niveau}`, 20, yOffset);
+            yOffset += 30;
+        });
+    }
 
-    // Récupérer et ajouter les informations de compétences
+    // Ajouter les informations de compétences
     const skillsItems = document.querySelectorAll('.skills-item');
-    skillsItems.forEach((item, index) => {
-        const competence = item.querySelector('input[name="competence[]"]').value;
+    if (skillsItems.length > 0) {
+        addSectionTitle('Compétences', yOffset);
+        yOffset += 10;
 
-        doc.text(`Compétence ${index + 1}:`, 10, yOffset);
-        doc.text(`Compétence: ${competence}`, 10, yOffset + 10);
-        yOffset += 20;
-    });
+        skillsItems.forEach((item, index) => {
+            const competence = item.querySelector('input[name="competence[]"]').value;
+            addText(`Compétence ${index + 1}: ${competence}`, 20, yOffset);
+            yOffset += 20;
+        });
+    }
 
     // Sauvegarder le PDF
     doc.save('cv.pdf');
