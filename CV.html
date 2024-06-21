@@ -7,7 +7,7 @@
     <title>Créer votre CV</title>
     <link rel="stylesheet" href="style.css">
     <script src="javascript.js" defer></script>
-    <!-- Ajout de 'defer' pour charger le script après le parsing du HTML -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
@@ -31,27 +31,27 @@
                 Formulaire CV
                 <span></span>
             </div>
-    
+
             <!-- Étape 1: Informations Personnelles -->
             <div class="step active" id="step1">
                 <h3>Informations Personnelles</h3>
-                <form>
+                <form id="personal-info-form">
                     <div class="flex">
                         <div class="input-group">
                             <label for="nom_prenom">Nom et Prénom :</label>
                             <input type="text" id="nom_prenom" name="nom_prenom" class="input" required>
                         </div>
-    
+
                         <div class="input-group">
                             <label for="adresse">Adresse :</label>
                             <input type="text" id="adresse" name="adresse" class="input" required>
                         </div>
-    
+
                         <div class="input-group">
                             <label for="email">Adresse mail :</label>
                             <input type="email" id="email" name="email" class="input" required>
                         </div>
-    
+
                         <div class="input-group">
                             <label for="permis">Permis de conduire :</label>
                             <select id="permis" name="permis" class="input" required>
@@ -61,130 +61,131 @@
                             </select>
                         </div>
                     </div>
-    
+
                     <div class="buttons">
                         <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
                 </form>
             </div>
-    
+
             <!-- Étape 2: Éducation -->
             <div class="step" id="step2">
                 <h3>Éducation</h3>
-                <form>
+                <form id="education-form">
                     <div class="education-container">
                         <div class="education-item">
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="diplome">Diplôme obtenu :</label>
-                                    <input type="text" id="diplome" name="diplome[]" class="input" required>
+                                    <input type="text" name="diplome[]" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="annee">Année d'obtention :</label>
-                                    <input type="text" id="annee" name="annee[]" class="input" required>
+                                    <input type="text" name="annee[]" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="ecole">École ou Université :</label>
-                                    <input type="text" id="ecole" name="ecole[]" class="input" required>
+                                    <input type="text" name="ecole[]" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="en_cours">En cours :</label>
-                                    <input type="checkbox" id="en_cours" name="en_cours[]">
+                                    <input type="checkbox" name="en_cours[]">
                                 </div>
                             </div>
                             <div class="input-group full-width">
-                                <label for="description_education">Missions et taches :</label>
-                                <textarea id="description_education" name="description_education[]" class="input" required></textarea>
+                                <label for="description_education">Missions et tâches :</label>
+                                <textarea name="description_education[]" class="input" required></textarea>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="add-btn" onclick="addEducation()">Ajouter une éducation</button>
+                    <button type="button" class="add-btn education" onclick="addEducation()">Ajouter une
+                        éducation</button>
                     <div class="buttons">
                         <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
                         <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
                 </form>
             </div>
-    
+
             <!-- Étape 3: Expérience -->
             <div class="step" id="step3">
                 <h3>Expérience</h3>
-                <form>
+                <form id="experience-form">
                     <div class="experience-container">
                         <div class="experience-item">
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="poste">Poste occupé :</label>
-                                    <input type="text" id="poste" name="poste[]" class="input" required>
+                                    <input type="text" name="poste[]" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="entreprise">Entreprise :</label>
-                                    <input type="text" id="entreprise" name="entreprise[]" class="input" required>
+                                    <input type="text" name="entreprise[]" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="date_debut">Date de début :</label>
-                                    <input type="date" id="date_debut" name="date_debut[]" class="input" required>
+                                    <input type="date" name="date_debut[]" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="date_fin">Date de fin :</label>
-                                    <input type="date" id="date_fin" name="date_fin[]" class="input">
+                                    <input type="date" name="date_fin[]" class="input">
                                 </div>
                             </div>
                             <div class="input-group">
                                 <label for="en_cours">En cours :</label>
-                                <input type="checkbox" id="en_cours" name="en_cours[]">
+                                <input type="checkbox" name="en_cours[]">
                             </div>
                             <div class="input-group full-width">
                                 <label for="description">Description des tâches et missions :</label>
-                                <textarea id="description" name="description[]" class="input" required></textarea>
+                                <textarea name="description[]" class="input" required></textarea>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="add-btn" onclick="addExperience()">Ajouter une expérience</button>
+                    <button type="button" class="add-btn experience" onclick="addExperience()">Ajouter une
+                        expérience</button>
                     <div class="buttons">
                         <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
                         <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
                 </form>
             </div>
-            
-    
+
             <!-- Étape 4: Hobbies -->
             <div class="step" id="step4">
                 <h3>Hobbies</h3>
-                <form>
+                <form id="hobbies-form">
                     <div class="hobbies-container">
                         <div class="hobbies-item">
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="hobby">Hobby :</label>
-                                    <input type="text" id="hobby" name="hobby[]" class="input" required>
+                                    <input type="text" name="hobby[]" class="input" required>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="add-btn" onclick="addHobby()">Ajouter un hobby</button>
+                    <button type="button" class="add-btn hobbies" onclick="addHobby()">Ajouter un hobby</button>
                     <div class="buttons">
                         <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
                         <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
                 </form>
             </div>
-    
+
             <!-- Étape 5: Langues maîtrisées -->
             <div class="step" id="step5">
                 <h3>Langues maîtrisées</h3>
-                <form>
-                    <div class="langues-container">
-                        <div class="langues-item">
+                <form id="languages-form">
+                    <div class="languages-container">
+                        <div class="languages-item">
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="langue">Langue :</label>
-                                    <input type="text" id="langue" name="langue[]" class="input" required>
+                                    <input type="text" name="langue[]" class="input" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="niveau">Niveau :</label>
-                                    <select id="niveau" name="niveau[]" class="input" required>
+                                    <select name="niveau[]" class="input" required>
                                         <option value="">Choisir...</option>
                                         <option value="débutant">Débutant</option>
                                         <option value="intermédiaire">Intermédiaire</option>
@@ -195,28 +196,28 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="add-btn" onclick="addLangue()">Ajouter une langue</button>
+                    <button type="button" class="add-btn languages" onclick="addLanguage()">Ajouter une langue</button>
                     <div class="buttons">
                         <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
                         <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
                 </form>
             </div>
-    
+
             <!-- Étape 6: Technologies et logiciels maîtrisés -->
             <div class="step" id="step6">
                 <h3>Technologies et logiciels maîtrisés</h3>
-                <form>
+                <form id="technologies-form">
                     <div class="technologies-container">
                         <div class="technologies-item">
                             <div class="flex">
                                 <div class="input-group">
                                     <label for="technologie">Technologie ou logiciel :</label>
-                                    <input type="text" id="technologie" name="technologie[]" class="input" required>
+                                    <input type="text" name="technologie[]" class="input" required>
                                 </div>
                                 <div class="input-group">
-                                    <label for="niveau_technologie">Niveau :</label>
-                                    <select id="niveau_technologie" name="niveau_technologie[]" class="input" required>
+                                    <label for="niveau">Niveau :</label>
+                                    <select name="niveau[]" class="input" required>
                                         <option value="">Choisir...</option>
                                         <option value="débutant">Débutant</option>
                                         <option value="intermédiaire">Intermédiaire</option>
@@ -227,21 +228,52 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="add-btn" onclick="addTechnologie()">Ajouter une technologie</button>
+                    <button type="button" class="add-btn technologies" onclick="addTechnology()">Ajouter une
+                        technologie</button>
                     <div class="buttons">
                         <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
-                        <button type="submit" class="submit-btn">Terminer</button>
+                        <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
                     </div>
                 </form>
             </div>
-    
+
+            <!-- Étape 7: Compétences professionnelles -->
+            <div class="step" id="step7">
+                <h3>Compétences professionnelles</h3>
+                <form id="skills-form">
+                    <div class="skills-container">
+                        <div class="skills-item">
+                            <div class="flex">
+                                <div class="input-group">
+                                    <label for="competence">Compétence :</label>
+                                    <input type="text" name="competence[]" class="input" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="add-btn skills" onclick="addSkill()">Ajouter une compétence</button>
+                    <div class="buttons">
+                        <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
+                        <button type="button" class="next-btn" onclick="nextStep()">Suivant</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Étape 8: Validation -->
+            <div class="step" id="step8">
+                <h3>Validation</h3>
+                <form id="validation-form">
+                    <div class="validation-message">
+                        <p>Merci de vérifier toutes les informations avant de générer le CV.</p>
+                    </div>
+                    <div class="buttons">
+                        <button type="button" class="prev-btn" onclick="prevStep()">Précédent</button>
+                        <button type="button" class="generate-btn" onclick="generatePDF()">Générer le CV</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
-    
-    <footer class="footer">
-        <p>&copy; 2024 Mon CV en ligne. Tous droits réservés.</p>
-    </footer>
-
 </body>
 
 </html>

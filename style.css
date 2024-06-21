@@ -1,285 +1,145 @@
-/* Reset CSS */
-* {
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* Utilisation de Montserrat comme police principale */
-body {
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #333;
-}
-
-/* Style pour le header */
 .header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style pour le logo */
-.logo img {
-  max-width: 100px;
-}
-
-/* Style pour la liste de navigation */
-.menu ul {
-  list-style-type: none;
-  display: flex;
-}
-
-/* Style pour les éléments de la liste */
-.menu li {
-  margin-right: 20px;
-}
-
-/* Style pour les liens dans la liste */
-.menu a {
-  text-decoration: none;
-  color: #303030;
-  transition: color 0.3s;
-}
-
-.menu a:hover {
-  color: #384c6c;
-}
-
-/* Style pour la section avec l'image */
-.image {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.image .item {
-  flex: 1;
-}
-
-.image img {
-  max-width: 100%;
+.header .logo img {
+  width: 50px;
   height: auto;
 }
 
-/* Style pour les cartes */
-.card-container {
+.header .menu ul {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-.card {
-  flex: 1 1 300px;
-  background-color: #f2f8f9;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.header .menu ul li {
+  margin-left: 2rem;
 }
 
-.card-title {
-  color: #262626;
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.small-desc {
-  color: #452c2c;
-  font-size: 1em;
-}
-
-/* Style pour la section de call to action */
-.calltoaction {
-  text-align: center;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
-}
-
-/* Style pour les titres */
-h1, h2, h3 {
-  margin-bottom: 10px;
-}
-
-/* Style pour les paragraphes */
-p {
-  margin-bottom: 15px;
-  color: #666;
-}
-
-/* Style pour les boutons */
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #384c6c;
-  color: white;
+.header .menu ul li a {
+  color: #fff;
   text-decoration: none;
-  transition: background-color 0.3s;
+  font-size: 1.1rem;
 }
 
-.button:hover {
-  background-color: #1e3351;
-}
-
-/* Style pour la section avec la carte call to action */
-.card1 {
-  background-color: #dbdbdb;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  padding: 20px;
-  text-align: left;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.header1 {
-  display: flex;
-  align-items: center;
-}
-
-.image1 {
-  flex: 0 0 50px;
-  margin-right: 20px;
-}
-
-.title1 {
-  font-size: 1.5em;
-  font-weight: 700;
-  color: #262626;
-}
-
-.message1 {
-  margin-bottom: 10px;
-  color: #666;
-}
 .flex-item1 {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 1rem;
 }
-
-
-
-/* Form page Creer un CV */
 
 .form {
-  background: #fff;
-  padding: 20px;
-  width: 80%;
-  max-width: 800px;
+  background-color: #fff;
+  padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
 }
 
-.title {
-  font-size: 24px;
+.form .title {
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 20px;
-  position: relative;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.title span {
-  position: absolute;
-  width: 60px;
-  height: 4px;
-  background: #333;
-  bottom: -10px;
-  left: calc(50% - 30px);
-}
-
-.step {
+.form .step {
   display: none;
 }
 
-.step.active {
+.form .step.active {
   display: block;
 }
 
-h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+.form h3 {
+  margin-bottom: 1rem;
 }
 
 .input-group {
-  flex: 1;
-  margin-right: 10px;
+  margin-bottom: 1rem;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
-.input {
+.input-group input,
+.input-group select,
+.input-group textarea {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
+
 .input-group.full-width {
   width: 100%;
-  margin-top: 10px; /* Espacement optionnel en haut du bloc */
-  margin-bottom: 10px; /* Espacement en bas du bloc */
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
 }
 
 .buttons {
-  margin-top: 20px;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }
 
 .buttons button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
   background-color: #333;
   color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   cursor: pointer;
-  margin-left: 10px;
 }
 
 .buttons button:hover {
   background-color: #555;
 }
 
-.buttons .submit-btn {
-  background-color: #4caf50;
-}
-
-.buttons .submit-btn:hover {
-  background-color: #45a049;
-}
-
-.footer {
-  background-color: #333;
+.add-btn {
+  background-color: #28a745;
   color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 1rem 0;
 }
 
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.education-item, .experience-item, .hobbies-item, .languages-item, .technologies-item, .skills-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.validation-message p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
