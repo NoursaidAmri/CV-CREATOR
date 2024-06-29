@@ -207,7 +207,6 @@ p {
   padding: 5%;
   margin: 0 auto;
   text-align: left;
-
 }
 
 .calltoaction:hover {
@@ -367,4 +366,77 @@ p {
 .button {
   position: relative; /* Positionnement relatif pour le texte et les boutons */
   z-index: 1;
+}
+
+/* nos articles */
+main {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Introduction des articles */
+.articles-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+.articles-intro p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Conteneur des cartes d'articles */
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Styles pour chaque carte d'article */
+.article-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Contenu de l'article */
+.article-content {
+  padding: 15px;
+}
+
+
+/* Extrait de l'article */
+.article-excerpt {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Lien pour lire plus */
+.read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
