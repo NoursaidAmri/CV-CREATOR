@@ -333,7 +333,7 @@ p {
 .button {
   display: inline-block;
   padding: 12px 25px;
-  background-color: #007bff;
+  background-color: #2a9d8f;
   color: #fff;
   text-decoration: none;
   border-radius: 30px; /* Coins arrondis du bouton */
@@ -342,7 +342,7 @@ p {
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-color: #2a9d8f;
   transform: scale(1.05); /* Légère augmentation de la taille au survol */
 }
 
@@ -428,7 +428,7 @@ main {
 .read-more {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #2a9d8f;
   color: #fff;
   text-decoration: none;
   border-radius: 30px;
@@ -437,6 +437,65 @@ main {
 }
 
 .read-more:hover {
-  background-color: #0056b3;
+  background-color: #2a9d8f;
   transform: scale(1.05);
+}
+/* Pied de page */
+.footer {
+  background-color: #333; /* Couleur de fond du pied de page */
+  color: #ffffff; /* Couleur du texte */
+  padding: 1.5rem 1rem; /* Espacement intérieur */
+  text-align: center; /* Alignement du texte */
+  margin-top: 2rem; /* Marge au-dessus du pied de page */
+}
+
+.footer .container {
+  max-width: 1200px; /* Largeur maximale */
+  margin: 0 auto; /* Centrage horizontal */
+}
+
+/* Texte */
+.footer p {
+  margin: 0; /* Supprime la marge par défaut */
+  font-size: 0.875rem; /* Taille de texte plus petite */
+}
+
+/* Navigation du pied de page */
+.footer-nav {
+  margin: 1rem 0; /* Marge pour espacer les éléments */
+}
+
+.footer-nav ul {
+  list-style: none; /* Supprime les puces de la liste */
+  padding: 0; /* Supprime le padding */
+  margin: 0; /* Supprime la marge */
+  display: flex; /* Affiche les éléments en ligne */
+  justify-content: center; /* Centre les éléments */
+  gap: 1.5rem; /* Espace entre les éléments */
+}
+
+.footer-nav a {
+  color: #ffffff; /* Couleur des liens */
+  text-decoration: none; /* Supprime le soulignement */
+  font-size: 0.875rem; /* Taille de texte plus petite */
+}
+
+.footer-nav a:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol */
+}
+
+/* Icônes de réseaux sociaux */
+.social-icons {
+  margin: 1rem 0; /* Marge pour espacer les icônes */
+}
+
+.social-icons a {
+  color: #ffffff; /* Couleur des icônes */
+  font-size: 1.25rem; /* Taille des icônes */
+  margin: 0 0.5rem; /* Marge entre les icônes */
+  transition: color 0.3s ease; /* Transition pour le changement de couleur */
+}
+
+.social-icons a:hover {
+  color: #2a9d8f; /* Couleur des icônes au survol */
 }
